@@ -5,8 +5,18 @@ import com.zetkoofficial.mathlib.function.object.IFunction;
 import com.zetkoofficial.mathlib.matrixvector.object.Matrix;
 import com.zetkoofficial.mathlib.matrixvector.object.Vector;
 
+/**
+ * This is the helper class for the matrixvector package.
+ * @author ZetkoOfficial
+ *
+ */
 public final class MathMatrixVector {
 	
+	/**
+	 * Does the sigmoid operation on every element of the Matrix.
+	 * @param m The Matrix
+	 * @return The result Matrix
+	 */
 	public static Matrix mathSigmoid(Matrix m) {
 		Matrix res = new Matrix(m.getWidth(), m.getHeight());
 		
@@ -19,6 +29,11 @@ public final class MathMatrixVector {
 		return res;
 	}
 	
+	/**
+	 * Does the sigmoid prime operation on every element of the Matrix.
+	 * @param m The Matrix
+	 * @return The result Matrix
+	 */
 	public static Matrix mathSigmoidPrime(Matrix m) {
 		Matrix res = new Matrix(m.getWidth(), m.getHeight());
 		
@@ -31,6 +46,12 @@ public final class MathMatrixVector {
 		return res;
 	}
 	
+	/**
+	 * Does a custom operation on every element of the Matrix.
+	 * @param m The Matrix
+	 * @param function The IFunction which holds the custom operation
+	 * @return The result Matrix
+	 */
 	public static Matrix mathCustomFunction(Matrix m, IFunction function) {
 		Matrix res = new Matrix(m.getWidth(), m.getHeight());
 		
@@ -43,6 +64,11 @@ public final class MathMatrixVector {
 		return res;
 	}
 	
+	/**
+	 * Does the absolute value operation on every element of the Matrix.
+	 * @param m The Matrix
+	 * @return The result Matrix
+	 */
 	public static Matrix mathAbs(Matrix m) {
 		Matrix res = new Matrix(m.getWidth(), m.getHeight());
 		
@@ -55,6 +81,12 @@ public final class MathMatrixVector {
 		return res;
 	}
 	
+	/**
+	 * Does addition between elements of both Matrices of the same index.
+	 * @param m1 The first Matrix
+	 * @param m2 The second Matrix
+	 * @return The result Matrix
+	 */
 	public static Matrix mathAdd(Matrix m1, Matrix m2) {
 		Matrix res = new Matrix(m1.getWidth(), m1.getHeight());
 		
@@ -67,6 +99,12 @@ public final class MathMatrixVector {
 		return res;
 	}
 	
+	/**
+	 * Does subtraction between elements of both Matrices of the same index.
+	 * @param m1 The first Matrix
+	 * @param m2 The second Matrix
+	 * @return The result Matrix
+	 */
 	public static Matrix mathSubtract(Matrix m1, Matrix m2) {
 		Matrix res = new Matrix(m1.getWidth(), m1.getHeight());
 		
@@ -79,6 +117,12 @@ public final class MathMatrixVector {
 		return res;
 	}
 	
+	/**
+	 * Does multiplication between elements of both Matrices of the same index.
+	 * @param m1 The first Matrix
+	 * @param m2 The second Matrix
+	 * @return The result Matrix
+	 */
 	public static Matrix mathMultiply(Matrix m1, Matrix m2) {
 		Matrix res = new Matrix(m1.getWidth(), m1.getHeight());
 		
@@ -91,6 +135,12 @@ public final class MathMatrixVector {
 		return res;
 	}
 	
+	/**
+	 * Does division between elements of both Matrices of the same index.
+	 * @param m1 The first Matrix
+	 * @param m2 The second Matrix
+	 * @return The result Matrix
+	 */
 	public static Matrix mathDivide(Matrix m1, Matrix m2) {
 		Matrix res = new Matrix(m1.getWidth(), m1.getHeight());
 		
@@ -104,7 +154,12 @@ public final class MathMatrixVector {
 	}
 	
 	
-	
+	/**
+	 * Calculates the dot product of Matrices.
+	 * @param m1 The first Matrix
+	 * @param m2 The second Matrix
+	 * @return The result Matrix
+	 */
 	public static Matrix mathDot(Matrix m1, Matrix m2) {		
 		Matrix res = new Matrix(m2.getWidth(), m1.getHeight());
 		
@@ -121,6 +176,11 @@ public final class MathMatrixVector {
 		return res;
 	}
 	
+	/**
+	 * Does the sigmoid operation on every element of the Vector.
+	 * @param v The Vector
+	 * @return The result Vector
+	 */
 	public static Vector mathSigmoid(Vector v) {
 		Vector res = new Vector(v.getSize());
 		
@@ -131,6 +191,11 @@ public final class MathMatrixVector {
 		return res;
 	}
 	
+	/**
+	 * Does the sigmoid prime operation on every element of the Vector.
+	 * @param v The Vector
+	 * @return The result Vector
+	 */
 	public static Vector mathSigmoidPrime(Vector v) {
 		Vector res = new Vector(v.getSize());
 		
@@ -141,6 +206,12 @@ public final class MathMatrixVector {
 		return res;
 	}
 	
+	/**
+	 * Does the custom operation on every element of the Vector.
+	 * @param v The Vector
+	 * @param function The IFunction which holds the custom operation.
+	 * @return The result Vector
+	 */
 	public static Vector mathCustomFunction(Vector v, IFunction function) {
 		Vector res = new Vector(v.getSize());
 		
@@ -151,6 +222,11 @@ public final class MathMatrixVector {
 		return res;
 	}
 	
+	/**
+	 * Does the absolute value operation on every element of the Vector.
+	 * @param v The Vector
+	 * @return The result Vector
+	 */
 	public static Vector mathAbs(Vector v) {
 		Vector res = new Vector(v.getSize());
 		
@@ -161,6 +237,12 @@ public final class MathMatrixVector {
 		return res;
 	}
 	
+	/**
+	 * Does addition between elements of both Vectors of the same index.
+	 * @param v1 The first Vector
+	 * @param v2 The second Vector
+	 * @return The result Vector
+	 */
 	public static Vector mathAdd(Vector v1, Vector v2) {
 		Vector res = new Vector(v1.getSize());
 		
@@ -171,6 +253,12 @@ public final class MathMatrixVector {
 		return res;
 	}
 	
+	/**
+	 * Does subtraction between elements of both Vectors of the same index.
+	 * @param v1 The first Vector
+	 * @param v2 The second Vector
+	 * @return The result Vector
+	 */
 	public static Vector mathSubtract(Vector v1, Vector v2) {
 		Vector res = new Vector(v1.getSize());
 		
@@ -181,6 +269,12 @@ public final class MathMatrixVector {
 		return res;
 	}
 	
+	/**
+	 * Does multiplication between elements of both Vectors of the same index.
+	 * @param v1 The first Vector
+	 * @param v2 The second Vector
+	 * @return The result Vector
+	 */
 	public static Vector mathMultiply(Vector v1, Vector v2) {
 		Vector res = new Vector(v1.getSize());
 		
@@ -191,6 +285,12 @@ public final class MathMatrixVector {
 		return res;
 	}
 	
+	/**
+	 * Does division between elements of both Vectors of the same index.
+	 * @param v1 The first Vector
+	 * @param v2 The second Vector
+	 * @return The result Vector
+	 */
 	public static Vector mathDivide(Vector v1, Vector v2) {
 		Vector res = new Vector(v1.getSize());
 		
@@ -202,7 +302,12 @@ public final class MathMatrixVector {
 	}
 	
 	
-	
+	/**
+	 * Calculates the dot product of Vectors.
+	 * @param v1 The first Vector
+	 * @param v2 The second Vector
+	 * @return The result Vector
+	 */
 	public static double mathDot(Vector v1, Vector v2) {
 		double res = 0;
 		
