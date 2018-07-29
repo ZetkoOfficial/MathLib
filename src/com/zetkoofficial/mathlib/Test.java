@@ -3,7 +3,7 @@ package com.zetkoofficial.mathlib;
 import com.zetkoofficial.mathlib.matrixvector.object.Matrix;
 import static com.zetkoofficial.mathlib.matrixvector.helper.MathMatrixVector.*;
 
-import com.zetkoofficial.mathlib.function.IFunction;
+import com.zetkoofficial.mathlib.function.object.IFunction;
 
 import static com.zetkoofficial.mathlib.calculus.helper.MathCalculus.*;
 

@@ -1,6 +1,6 @@
-package com.zetkoofficial.mathlib.function;
+package com.zetkoofficial.mathlib.function.helper;
 
-public class MathFunctions {
+public class MathFunction {
 	public static double mathSigmoid(double value) {
 		return 1d / (1 + Math.exp(-value));
 	}

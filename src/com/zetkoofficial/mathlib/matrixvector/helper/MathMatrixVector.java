@@ -1,7 +1,7 @@
 package com.zetkoofficial.mathlib.matrixvector.helper;
 
-import com.zetkoofficial.mathlib.function.IFunction;
-import com.zetkoofficial.mathlib.function.MathFunctions;
+import com.zetkoofficial.mathlib.function.helper.MathFunction;
+import com.zetkoofficial.mathlib.function.object.IFunction;
 import com.zetkoofficial.mathlib.matrixvector.object.Matrix;
 import com.zetkoofficial.mathlib.matrixvector.object.Vector;
 
@@ -12,7 +12,7 @@ public final class MathMatrixVector {
 		
 		for(int x = 0; x < m.getWidth(); x++) {
 			for(int y = 0; y < m.getHeight(); y ++) {
-				res.put(x, y, MathFunctions.mathSigmoid(m.get(x, y)));
+				res.put(x, y, MathFunction.mathSigmoid(m.get(x, y)));
 			}
 		}
 		
@@ -24,7 +24,7 @@ public final class MathMatrixVector {
 		
 		for(int x = 0; x < m.getWidth(); x++) {
 			for(int y = 0; y < m.getHeight(); y ++) {
-				res.put(x, y, MathFunctions.mathSigmoidPrime(m.get(x, y)));
+				res.put(x, y, MathFunction.mathSigmoidPrime(m.get(x, y)));
 			}
 		}
 		
@@ -125,7 +125,7 @@ public final class MathMatrixVector {
 		Vector res = new Vector(v.getSize());
 		
 		for(int x = 0; x < v.getSize(); x++) {
-			res.put(x, MathFunctions.mathSigmoid(v.get(x)));
+			res.put(x, MathFunction.mathSigmoid(v.get(x)));
 		}
 		
 		return res;
@@ -135,7 +135,7 @@ public final class MathMatrixVector {
 		Vector res = new Vector(v.getSize());
 		
 		for(int x = 0; x < v.getSize(); x++) {
-			res.put(x, MathFunctions.mathSigmoidPrime(v.get(x)));
+			res.put(x, MathFunction.mathSigmoidPrime(v.get(x)));
 		}
 		
 		return res;

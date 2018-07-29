@@ -1,6 +1,6 @@
 package com.zetkoofficial.mathlib.calculus.helper;
 
-import com.zetkoofficial.mathlib.function.IFunction;
+import com.zetkoofficial.mathlib.function.object.IFunction;
 
 public class MathCalculus {
 	public static double mathDerivative(IFunction function, double x, double stepSize) {
