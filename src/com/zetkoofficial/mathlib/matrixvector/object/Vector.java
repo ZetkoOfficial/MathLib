@@ -87,5 +87,17 @@ public class Vector {
 		return sb.toString();
 	}
 	
+	/**
+	 * @return A copy of this Vector
+	 */
+	public Vector copy() {
+		Vector res = new Vector(getSize());
+		for(int x = 0; x < this.size; x++) {
+			res.put(x, get(x));
+		}
+		
+		return res;
+	}
+	
 }
 

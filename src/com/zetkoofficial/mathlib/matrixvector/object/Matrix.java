@@ -170,5 +170,19 @@ public class Matrix {
 		return sb.toString();
 	}
 	
+	/**
+	 * @return A copy of this Matrix
+	 */
+	public Matrix copy() {
+		Matrix res = new Matrix(getWidth(), getHeight());
+		for(int x = 0; x < this.width; x++) {
+			for(int y = 0; y < this.height; y++) {
+				res.put(x, y, get(x , y));
+			}
+		}
+		
+		return res;
+	}
+	
 }
 
