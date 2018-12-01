@@ -6,7 +6,8 @@ It currently has 4 packages: _matrixVector_, _calculus_, _function_ and _complex
 
 To use MathLib in your Java project you can either clone this repository and compile it yourself or download it from [here](http://zetkoofficial.com/mathLib), then add it to your build path.
 The source and javadoc of this project are both in located in the .jar on the website.
-You can find the javadoc [here](http://zetkoofficial.github.io/MathLib)
+
+You can find the javadoc [here](http://zetkoofficial.github.io/MathLib).
 
 I suggest you use static imports as all helper methods in all packages are prefixed by ```math```.
 
