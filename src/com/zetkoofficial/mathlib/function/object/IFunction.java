@@ -7,7 +7,7 @@ package com.zetkoofficial.mathlib.function.object;
  */
 public interface IFunction {
 	/**
-	 * In this method you should map the input to a new value.
+	 * This method returns the function valued at a point
 	 * 
 	 * @param value The input
 	 * @return The output

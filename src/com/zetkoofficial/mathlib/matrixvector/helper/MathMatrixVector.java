@@ -1,6 +1,6 @@
 package com.zetkoofficial.mathlib.matrixvector.helper;
 
-import com.zetkoofficial.mathlib.function.helper.MathFunction;
+import com.zetkoofficial.mathlib.function.object.FunctionsBuiltIn;
 import com.zetkoofficial.mathlib.function.object.IFunction;
 import com.zetkoofficial.mathlib.matrixvector.object.Matrix;
 import com.zetkoofficial.mathlib.matrixvector.object.Vector;
@@ -18,15 +18,7 @@ public final class MathMatrixVector {
 	 * @return The result Matrix
 	 */
 	public static Matrix mathSigmoid(Matrix m) {
-		Matrix res = new Matrix(m.getWidth(), m.getHeight());
-		
-		for(int x = 0; x < m.getWidth(); x++) {
-			for(int y = 0; y < m.getHeight(); y ++) {
-				res.put(x, y, MathFunction.mathSigmoid(m.get(x, y)));
-			}
-		}
-		
-		return res;
+		return mathCustomFunction(m, FunctionsBuiltIn.FUNCTION_SIGMOID);
 	}
 	
 	/**
@@ -35,15 +27,7 @@ public final class MathMatrixVector {
 	 * @return The result Matrix
 	 */
 	public static Matrix mathSigmoidPrime(Matrix m) {
-		Matrix res = new Matrix(m.getWidth(), m.getHeight());
-		
-		for(int x = 0; x < m.getWidth(); x++) {
-			for(int y = 0; y < m.getHeight(); y ++) {
-				res.put(x, y, MathFunction.mathSigmoidPrime(m.get(x, y)));
-			}
-		}
-		
-		return res;
+		return mathCustomFunction(m, FunctionsBuiltIn.FUNCTION_SIGMOID_PRIME);
 	}
 	
 	/**
@@ -153,7 +137,6 @@ public final class MathMatrixVector {
 		return res;
 	}
 	
-	
 	/**
 	 * Calculates the dot product of Matrices.
 	 * @param m1 The first Matrix
@@ -182,13 +165,7 @@ public final class MathMatrixVector {
 	 * @return The result Vector
 	 */
 	public static Vector mathSigmoid(Vector v) {
-		Vector res = new Vector(v.getSize());
-		
-		for(int x = 0; x < v.getSize(); x++) {
-			res.put(x, MathFunction.mathSigmoid(v.get(x)));
-		}
-		
-		return res;
+		return mathCustomFunction(v, FunctionsBuiltIn.FUNCTION_SIGMOID);
 	}
 	
 	/**
@@ -197,13 +174,7 @@ public final class MathMatrixVector {
 	 * @return The result Vector
 	 */
 	public static Vector mathSigmoidPrime(Vector v) {
-		Vector res = new Vector(v.getSize());
-		
-		for(int x = 0; x < v.getSize(); x++) {
-			res.put(x, MathFunction.mathSigmoidPrime(v.get(x)));
-		}
-		
-		return res;
+		return mathCustomFunction(v, FunctionsBuiltIn.FUNCTION_SIGMOID_PRIME);
 	}
 	
 	/**
