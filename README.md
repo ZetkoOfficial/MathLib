@@ -1,7 +1,7 @@
 # MathLib
 **MathLib** is a Java library that adds support for matrices and vectors, as well as definate integrals and derivatives.
 
-It currently has 3 packages: _matrixVector_, _calculus_, _function_ and _complex_.
+It currently has 4 packages: _matrixVector_, _calculus_, _function_ and _complex_.
 
 
 To use MathLib in your Java project you can either clone this repository and compile it yourself or download it from [here](http://zetkoofficial.com/mathLib), then add it to your build path.
