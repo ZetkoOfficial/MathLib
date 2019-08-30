@@ -26,6 +26,26 @@ public class Matrix {
 		this.height = height;
 	}
 	
+	
+	/**
+	 * 
+	 * @param rows The row Vectors of the Matrix in order.
+	 */
+	public Matrix(Vector... rows) {
+		this.width = rows[0].getSize();
+		this.height = rows.length;
+		
+		this.matrix = new double[width][height];
+		
+		int i = 0, j = 0;
+		for(Vector row : rows) {
+			for(double d : row.toArray()) {
+				this.put(j++, i, d);
+			}
+			j=0; i++;
+		}
+	}
+	
 	/**
 	 * 
 	 * Gets the element at the location (x,y).
@@ -184,5 +204,12 @@ public class Matrix {
 		return res;
 	}
 	
+	/**
+	 * @return An Array containing all the elements.
+	 */
+	public double[][] toArray() {
+		return matrix;
+	}
+
 }
 

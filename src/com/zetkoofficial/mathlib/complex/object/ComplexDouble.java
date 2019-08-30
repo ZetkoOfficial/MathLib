@@ -5,6 +5,7 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
+import com.zetkoofficial.mathlib.complex.helper.MathComplex;
 import com.zetkoofficial.mathlib.matrixvector.object.Vector;
 
 /**
@@ -35,17 +36,10 @@ public class ComplexDouble {
 	}
 	
 	/**
-	 * @return The angle between the x-axis and the vector formed by the complex number
-	 */
-	public double getAngle() {
-		return Math.atan2(getImaginaryPart(), getRealPart());
-	}
-	
-	/**
 	 * This function changes the complex number by making its absolute value 1, but keeping the angle.
 	 */
 	public void normalize() {
-		double tan = Math.tan(getAngle());
+		double tan = Math.tan(MathComplex.mathArgument(this));
 
 		double a = Math.sqrt(1d / (Math.pow(tan, 2) + 1));
 		double b = a * tan;

@@ -15,7 +15,7 @@ public class MathFunction {
 	 * @return The sigmoid of the value
 	 */
 	public static double mathSigmoid(double value) {
-		return FUNCTION_SIGMOID.run(value);
+		return FUNCTION_SIGMOID.apply(value);
 	}
 	
 	/**
@@ -24,6 +24,6 @@ public class MathFunction {
 	 * @return The sigmoid prime of the value
 	 */
 	public static double mathSigmoidPrime(double value) {
-		return FUNCTION_SIGMOID_PRIME.run(value);
+		return FUNCTION_SIGMOID_PRIME.apply(value);
 	}
 }

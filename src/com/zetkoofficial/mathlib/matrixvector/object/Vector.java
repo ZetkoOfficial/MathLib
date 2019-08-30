@@ -15,11 +15,19 @@ public class Vector {
 	private int size;
 	
 	/**
-	 * @param size The size of this Vector
+	 * @param size The size of this Vector.
 	 */
 	public Vector(int size) {
 		this.vector = new double[size];
 		this.size = size;
+	}
+	
+	/**
+	 * @param elements The elements of the Vector.
+	 */
+	public Vector(double... elements) {
+		this.size = elements.length;
+		this.vector = elements;
 	}
 	
 	/**
@@ -97,6 +105,13 @@ public class Vector {
 		}
 		
 		return res;
+	}
+	
+	/**
+	 * @return An Array containing all the elements.
+	 */
+	public double[] toArray() {
+		return vector;
 	}
 	
 }

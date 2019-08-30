@@ -1,7 +1,8 @@
 package com.zetkoofficial.mathlib.matrixvector.helper;
 
+import java.util.function.Function;
+
 import com.zetkoofficial.mathlib.function.object.FunctionsBuiltIn;
-import com.zetkoofficial.mathlib.function.object.IFunction;
 import com.zetkoofficial.mathlib.matrixvector.object.Matrix;
 import com.zetkoofficial.mathlib.matrixvector.object.Vector;
 
@@ -31,34 +32,26 @@ public final class MathMatrixVector {
 	}
 	
 	/**
+	 * Does the absolute value operation on every element of the Matrix.
+	 * @param m The Matrix
+	 * @return The result Matrix
+	 */
+	public static Matrix mathAbsElements(Matrix m) {
+		return mathCustomFunction(m, Math::abs);
+	}
+	
+	/**
 	 * Does a custom operation on every element of the Matrix.
 	 * @param m The Matrix
 	 * @param function The IFunction which holds the custom operation
 	 * @return The result Matrix
 	 */
-	public static Matrix mathCustomFunction(Matrix m, IFunction function) {
+	public static Matrix mathCustomFunction(Matrix m, Function<Double, Double> function) {
 		Matrix res = new Matrix(m.getWidth(), m.getHeight());
 		
 		for(int x = 0; x < m.getWidth(); x++) {
 			for(int y = 0; y < m.getHeight(); y ++) {
-				res.put(x, y, function.run(m.get(x, y)));
-			}
-		}
-		
-		return res;
-	}
-	
-	/**
-	 * Does the absolute value operation on every element of the Matrix.
-	 * @param m The Matrix
-	 * @return The result Matrix
-	 */
-	public static Matrix mathAbs(Matrix m) {
-		Matrix res = new Matrix(m.getWidth(), m.getHeight());
-		
-		for(int x = 0; x < m.getWidth(); x++) {
-			for(int y = 0; y < m.getHeight(); y ++) {
-				res.put(x, y, Math.abs(m.get(x, y)));
+				res.put(x, y, function.apply(m.get(x, y)));
 			}
 		}
 		
@@ -107,7 +100,7 @@ public final class MathMatrixVector {
 	 * @param m2 The second Matrix
 	 * @return The result Matrix
 	 */
-	public static Matrix mathMultiply(Matrix m1, Matrix m2) {
+	public static Matrix mathMultiplyElements(Matrix m1, Matrix m2) {
 		Matrix res = new Matrix(m1.getWidth(), m1.getHeight());
 		
 		for(int x = 0; x < m1.getWidth(); x++) {
@@ -138,12 +131,12 @@ public final class MathMatrixVector {
 	}
 	
 	/**
-	 * Calculates the dot product of Matrices.
+	 * Calculates the product of Matrices.
 	 * @param m1 The first Matrix
 	 * @param m2 The second Matrix
 	 * @return The result Matrix
 	 */
-	public static Matrix mathDot(Matrix m1, Matrix m2) {		
+	public static Matrix mathMultiply(Matrix m1, Matrix m2) {		
 		Matrix res = new Matrix(m2.getWidth(), m1.getHeight());
 		
 		for(int y = 0; y < m1.getHeight(); y++) {
@@ -178,34 +171,43 @@ public final class MathMatrixVector {
 	}
 	
 	/**
+	 * Does the absolute value operation on every element of the Vector.
+	 * @param v The Vector
+	 * @return The result Vector
+	 */
+	public static Vector mathAbsElements(Vector v) {
+		return mathCustomFunction(v, Math::abs);
+	}
+	
+	/**
 	 * Does the custom operation on every element of the Vector.
 	 * @param v The Vector
 	 * @param function The IFunction which holds the custom operation.
 	 * @return The result Vector
 	 */
-	public static Vector mathCustomFunction(Vector v, IFunction function) {
+	public static Vector mathCustomFunction(Vector v, Function<Double, Double> function) {
 		Vector res = new Vector(v.getSize());
 		
 		for(int x = 0; x < v.getSize(); x++) {
-			res.put(x, function.run(v.get(x)));
+			res.put(x, function.apply(v.get(x)));
 		}
 		
 		return res;
 	}
 	
 	/**
-	 * Does the absolute value operation on every element of the Vector.
+	 * Calculates the length of the Vector.
 	 * @param v The Vector
-	 * @return The result Vector
+	 * @return The length of the Vector.
 	 */
-	public static Vector mathAbs(Vector v) {
-		Vector res = new Vector(v.getSize());
+	public static double mathLength(Vector v) {
+		double sum = 0;
 		
-		for(int x = 0; x < v.getSize(); x++) {
-			res.put(x, Math.abs(v.get(x)));
+		for(double e : v.toArray()) {
+			sum += Math.pow(e, 2);
 		}
 		
-		return res;
+		return Math.sqrt(sum);
 	}
 	
 	/**

@@ -71,8 +71,8 @@ public class MathComplex {
 	 * @param c The ComplexDouble
 	 * @return The length of the complex vector of this ComplexDouble.
 	 */
-	public static double mathAbs(ComplexDouble c) {
-		return Math.pow(c.getRealPart(), 2) + Math.pow(c.getImaginaryPart(), 2);
+	public static double mathLength(ComplexDouble c) {
+		return MathMatrixVector.mathLength(c.getComplexVector());
 	}
 	
 	/**
@@ -90,5 +90,13 @@ public class MathComplex {
 		}
 		
 		return res;
+	}
+	
+	/**
+	 * @param c The ComplexDouble.
+	 * @return The angle between the x-axis and the vector formed by the complex number.
+	 */
+	public static double mathArgument(ComplexDouble c) {
+		return Math.atan2(c.getImaginaryPart(), c.getRealPart());
 	}
 }

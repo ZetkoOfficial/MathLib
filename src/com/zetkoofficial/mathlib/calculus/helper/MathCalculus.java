@@ -1,6 +1,6 @@
 package com.zetkoofficial.mathlib.calculus.helper;
 
-import com.zetkoofficial.mathlib.function.object.IFunction;
+import java.util.function.Function;
 
 /**
  * This is the helper class for the calculus package.
@@ -16,9 +16,9 @@ public class MathCalculus {
 	 * @param stepSize The step size(h)
 	 * @return The derivative at the point (x,y)
 	 */
-	public static double mathDerivative(IFunction function, double x, double stepSize) {
-		double f1 = function.run(x + stepSize);
-		double f2 = function.run(x);
+	public static double mathDerivative(Function<Double, Double> function, double x, double stepSize) {
+		double f1 = function.apply(x + stepSize);
+		double f2 = function.apply(x);
 		
 		double res = (f1 - f2) / stepSize;
 		
@@ -31,7 +31,7 @@ public class MathCalculus {
 	 * @param x The x coordinate
 	 * @return The derivative at the point (x,y)
 	 */
-	public static double mathDerivative(IFunction function, double x) {
+	public static double mathDerivative(Function<Double, Double> function, double x) {
 		return mathDerivative(function, x, 0.0001);
 	}
 	
@@ -43,14 +43,14 @@ public class MathCalculus {
 	 * @param rectNumber Number of rectangles which will approximate the area.
 	 * @return The definite integral between x = b and x = a.
 	 */
-	public static double mathIntegral(IFunction function, double a, double b, int rectNumber) {
+	public static double mathIntegral(Function<Double, Double> function, double a, double b, int rectNumber) {
 		double range = b - a;	
 		double stepSize = range / rectNumber;
 		
 		double res = 0;
 		
 		for(int i = 0; i < rectNumber; i++) {
-			res += function.run(stepSize * i + a) * stepSize;
+			res += function.apply(stepSize * i + a) * stepSize;
 		}
 		
 		return res;
@@ -63,7 +63,7 @@ public class MathCalculus {
 	 * @param b The higher bound of the integral
 	 * @return The definite integral between x = b and x = a.
 	 */
-	public static double mathIntegral(IFunction function, double a, double b) {
+	public static double mathIntegral(Function<Double, Double> function, double a, double b) {
 		return mathIntegral(function, a, b, 10000);
 	}
 }
